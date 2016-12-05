@@ -7,9 +7,9 @@
 --Database
 local connection  = {};
 
-function connectDB( )
+function connectDB( dbName )
 	local sqlite3 	  		= require( "sqlite3" );
-	local database	  		= "game.db";
+	local database	  		= dbName;
 	local path 		    	= system.pathForFile( database , system.DocumentsDirectory );
 	--local path 		  	= system.pathForFile( database , system.ResourceDirectory );
 	local db 		      	= sqlite3.open( path );
